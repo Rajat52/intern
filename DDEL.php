@@ -24,8 +24,8 @@ align=center>Options</td></tr>
 
 error_reporting(1);
 $todel=$_GET['rno'];
-mysql_query("update doct SET dshow='N' where dno='$todel' ;");
-$rs1=mysql_query("SELECT * from doct where dshow='Y' order by
+$mysqli->query("update doct SET dshow='N' where dno='$todel' ;");
+$rs1=$mysqli->query("SELECT * from doct where dshow='Y' order by
 dname;");
 $sno=1;
 while( $row=$rs1->fetch_array()) {
@@ -46,7 +46,7 @@ Records</font></td></tr>
 Name</td><td align=center>Specialization</td><td
 align=center>Options</td></tr>
 <?php
-$rs2=mysql_query("SELECT * from doct where dshow='N' order by
+$rs2=$mysqli->query("SELECT * from doct where dshow='N' order by
 dname;");
 $sno=1;
 while( $row=$rs2->fetch_array()) {

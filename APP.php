@@ -18,9 +18,7 @@ href=alist.php>Appointments</td>
 <tr><td><table width=750 cellspacing=0 cellpadding=5>
 <tr><td>Patient Id</td><td><select name=pat style="width:230px">
 <?php
-
-
-$rs1=mysql_query("SELECT * from patient where pshow='Y' order by
+$rs1=$mysqli->query("SELECT * from patient where pshow='Y' order by
 pname;");
 $sno=1;
 ?>
@@ -40,8 +38,7 @@ while( $row=$rs1->fetch_array()) {
 <tr><td>Doctor Id</td><td><select name=doc style="width:230px">
 <option selected="selected" disabled="disabled">Doctor Id</option>
 <?php
-
-$rs2=mysql_query("SELECT * from doct where dshow='Y' order by
+$rs2=$mysqli->query("SELECT * from doct where dshow='Y' order by
 dname;");
 $sno=1;
 while($row1=$rs2->fetch_array()) {

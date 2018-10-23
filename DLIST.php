@@ -21,9 +21,7 @@ List</font></td></tr>
 Name</td><td align=center>Specialization</td><td
 align=center>Options</td></tr>
 <?php
-
-
-$rs1=mysql_query("SELECT * from doct where dshow='Y' order by
+$rs1=$mysqli->query("SELECT * from doct where dshow='Y' order by
 dname;");
 $sno=1;
 while( $row=$rs1->fetch_array()) {
@@ -44,7 +42,7 @@ Records</font></td></tr>
 Name</td><td align=center>Specialization</td><td
 align=center>Options</td></tr>
 <?php
-$rs2=mysql_query("SELECT * from doct where dshow='N' order by
+$rs2=$mysqli->query("SELECT * from doct where dshow='N' order by
 dname;");
 $sno=1;
 while( $row=$rs2->fetch_array()) {

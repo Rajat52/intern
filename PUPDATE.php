@@ -30,7 +30,7 @@ if ($sex=="") { $error=1; echo "<tr><td><font color=red
 size=4>Sex can't empty</font></td></tr>"; }
 if ($error==0) 
 {
- mysql_query("update patient set pname='".$name."',psex='".$sex."',paddr='".$addr."'
+ $mysqli->query("update patient set pname='".$name."',psex='".$sex."',paddr='".$addr."'
 where pno='".$rno."'");
  echo "<tr><td align=center><font size=4 color=green>Successfully
 Records Updated</font></td></tr>";

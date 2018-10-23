@@ -27,7 +27,7 @@ if ($spec=="") { $error=1; echo "<tr><td><font color=red
 size=4>Specilization can't empty</font></td></tr>"; }
 if ($error==0) {
 
- dspec->query("insert into doct(dname)
+ $mysqli->query("insert into doct(dname)
 values('".$name."','".$spec."','Y')");
  echo "<tr><td align=center><font size=4 color=green>Successfully
 Records Inserted</font></td></tr>";

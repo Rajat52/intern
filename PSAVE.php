@@ -18,7 +18,6 @@ href=alist.php>Appointments</td>
 <tr bgcolor=red><td ><font size=4 color=white>Save
 Patient</font></td></tr>
 <?php
-
 $pno=trim($_POST["pno"]);
 $name=trim($_POST["name"]);
 $fname=trim($_POST["fname"]);
@@ -38,8 +37,7 @@ if ($addr=="") { $error=1; echo "<tr><td><font color=red
 size=4>Address can't empty</font></td></tr>"; }
 */
 if ($error==0) {
- 
- pname->query("insert into patient(pno)
+ $pname=$mysqli->query("insert into patient
 values('".$pno."','".$name."','".$fname."','".$sex."','".$addr."','".$contact."','".$dinfo."','".$amount."','".$show."')");
  echo "<tr><td align=center><font size=4 color=green>Successfully
 Records Inserted</font></td></tr>";

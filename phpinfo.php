@@ -39,7 +39,7 @@
 $pno=$_POST['pno'];
 
 
-$rs1=mysql_query("SELECT * from patient where pshow='Y' order by
+$rs1=$mysqli->query("SELECT * from patient where pshow='Y' order by
 pname;");
 
 while( $row=$rs1->fetch_array()) {

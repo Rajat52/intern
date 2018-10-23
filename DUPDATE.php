@@ -27,7 +27,7 @@ if ($spec=="") { $error=1; echo "<tr><td><font color=red
 size=4>Specilization can't empty</font></td></tr>"; }
 if ($error==0) {
 
- mysql_query("update doct set dname='".$name."',dspec='".$spec."'
+ mysqli_query("update doct set dname='".$name."',dspec='".$spec."'
 where dno='".$rno."'");
  echo "<tr><td align=center><font size=4 color=green>Successfully
 Records Updated</font></td></tr>";

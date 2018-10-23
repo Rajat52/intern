@@ -28,7 +28,7 @@ Details</font></td></tr>";
  echo "<tr><td>Doctor Name</td><td><input type=text name=name
 size=30 maxlength=30 value='".$row[1]."'></td></tr>";
  echo "<tr><td>Address</td><td><input type=text name=addr
-size=30 maxlength=30  value='".$row[2]."'></td></tr>";
+size=30 maxlength=30  value='".$row[4]."'></td></tr>";
 echo "<tr><td>sex</td><td><input type=text name=sex
 size=30 maxlength=30  value='".$row[3]."'></td></tr>";
  echo "</table></td></tr>";

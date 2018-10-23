@@ -32,7 +32,7 @@ if ($dat=="") { $error=1; echo "<tr><td><font color=red
 size=4>Date can't empty</font></td></tr>"; }
 if ($error==0) {
  
- apatient->query("insert into appt(adoctor)
+ $mysqli->query("insert into appt(adoctor)
 values('".$doc."','".$pat."','".$tim."','".$dat."','Y')");
  echo "<tr><td align=center><font size=4 color=green>Successfully
 Records Inserted</font></td></tr>";

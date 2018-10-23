@@ -31,7 +31,7 @@ align=center>Options</td></tr>
 if($_GET['rno']!=null)
 {
 $todel=$_GET['rno'];
-mysql_query("update appt SET ashow='N' where ano='$todel' ;");
+$mysqli->query("update appt SET ashow='N' where ano='$todel' ;");
 }
 $rs1=$mysqli->query("SELECT * from appt where ashow='Y'");
 $sno=1;

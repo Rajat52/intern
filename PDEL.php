@@ -23,8 +23,8 @@ align=center>Options</td></tr>
 <?php
 
 $todel=$_GET['rno'];
-mysql_query("update Patient SET pshow='N' where pno='$todel' ;");
-$rs1=mysql_query("SELECT * from patient where pshow='Y' order by
+$mysqli->query("update Patient SET pshow='N' where pno='$todel' ;");
+$rs1=$mysqli->query("SELECT * from patient where pshow='Y' order by
 pname;");
 $sno=1;
 while( $row=$rs1->fetch_array()) {
@@ -45,7 +45,7 @@ Records</font></td></tr>
 Name</td><td align=center>Address</td><td
 align=center>Options</td></tr>
 <?php
-$rs2=mysql_query("SELECT * from patient where pshow='N' order by
+$rs2=$mysqli->query("SELECT * from patient where pshow='N' order by
 pname;");
 $sno=1;
 while( $row=$rs2->fetch_array()) {
