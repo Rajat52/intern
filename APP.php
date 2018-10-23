@@ -26,7 +26,7 @@ $sno=1;
 ?>
 <option selected="selected" disabled="disabled">Patient Id</option>
 <?php
-while( $row=mysql_fetch_array($rs1)) {
+while( $row=$rs1->fetch_array()) {
  $patient_id=$row[0];
  $patient=$row[1];
  ?>
@@ -44,7 +44,7 @@ while( $row=mysql_fetch_array($rs1)) {
 $rs2=mysql_query("SELECT * from doct where dshow='Y' order by
 dname;");
 $sno=1;
-while($row1=mysql_fetch_array($rs2)) {
+while($row1=$rs2->fetch_array()) {
  $doctor_id=$row1[0];
  $doctor=$row1[1];
  ?>

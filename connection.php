@@ -2,14 +2,14 @@
 session_start();
 error_reporting(1);
 
-if(!mysql_connect("localhost","root",""))
+if(!$mysqli = new mysqli("localhost","root",""))
  {
   echo "<tr><td><font color=red size=4>Connection
 Error</font></td></tr>";
   die();
  }
- mysql_connect("localhost","root","");
- mysql_select_db("hospital");
+ $mysqli = new mysqli("localhost","root","");
+ $mysqli->select_db("hospital");
  
 if($_SESSION['admin']=="")
 {

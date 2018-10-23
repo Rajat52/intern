@@ -33,14 +33,14 @@ if($_GET['rno']!=null)
 $todel=$_GET['rno'];
 mysql_query("update appt SET ashow='N' where ano='$todel' ;");
 }
-$rs1=mysql_query("SELECT * from appt where ashow='Y'");
+$rs1=$mysqli->query("SELECT * from appt where ashow='Y'");
 $sno=1;
-while( $row=mysql_fetch_array($rs1)) {
+while( $row=$rs1->fetch_array()) {
 
-$rs2=mysql_query("SELECT pname from patient where pno='$row[2]'");
-$rs3=mysql_query("SELECT dname from doct where dno='$row[1]'");
-$rs22=mysql_fetch_assoc($rs2);
-$rs33=mysql_fetch_assoc($rs3);
+$rs2=$mysqli->query("SELECT pname from patient where pno='$row[2]'");
+$rs3=$mysqli->query("SELECT dname from doct where dno='$row[1]'");
+$rs22=$rs2->fetch_assoc();
+$rs33=$rs3->fetch_assoc();
  echo "<tr><td>$sno</td><td>$rs22[pname]</td><td>$rs33[dname]</td><td>$row[3]</td><td>$row[5]</td><td><a
 href=alist.php?rno=".$row[0].">Delete</a></td></tr>";
  $sno++;
@@ -58,14 +58,14 @@ Name</td><td align=center>Time</td>
 <td align=center>Date</td><td
 align=center>Options</td></tr>
 <?php
-$rs1=mysql_query("SELECT * from appt where ashow='N'");
+$rs1=$mysqli->query("SELECT * from appt where ashow='N'");
 $sno=1;
-while( $row=mysql_fetch_array($rs1)) {
+while( $row=$rs1->fetch_array()) {
 
-$rs2=mysql_query("SELECT pname from patient where pno='$row[2]'");
-$rs3=mysql_query("SELECT dname from doct where dno='$row[1]'");
-$rs22=mysql_fetch_assoc($rs2);
-$rs33=mysql_fetch_assoc($rs3);
+$rs2=$mysqli->query("SELECT pname from patient where pno='$row[2]'");
+$rs3=$mysqli->query("SELECT dname from doct where dno='$row[1]'");
+$rs22=$rs2->fetch_assoc();
+$rs33=$rs3->fetch_assoc();
  echo "<tr><td>$sno</td><td>$rs22[pname]</td><td>$rs33[dname]</td><td>$row[3]</td><td>$row[5]</td><td><a
 href=aundel.php?rno=".$row[0].">Undelete</a></td></tr>";
  $sno++;
