@@ -28,7 +28,7 @@ mysql_query("update doct SET dshow='N' where dno='$todel' ;");
 $rs1=mysql_query("SELECT * from doct where dshow='Y' order by
 dname;");
 $sno=1;
-while( $row=mysql_fetch_array($rs1)) {
+while( $row=$rs1->fetch_array()) {
  echo "<tr><td>$sno</td><td>$row[1]</td><td>$row[2]</td><td><a
 href=dmod.php?rno=".$row[0].">Modify</a> | <a
 href=ddel.php?rno=".$row[0].">Delete</a></td></tr>";
@@ -49,7 +49,7 @@ align=center>Options</td></tr>
 $rs2=mysql_query("SELECT * from doct where dshow='N' order by
 dname;");
 $sno=1;
-while( $row=mysql_fetch_array($rs2)) {
+while( $row=$rs2->fetch_array()) {
  echo "<tr><td>$sno</td><td>$row[1]</td><td>$row[2]</td><td><a
 href=dundel.php?rno=".$row[0].">Undelete</a></td></tr>";
  $sno++;

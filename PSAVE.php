@@ -39,7 +39,7 @@ size=4>Address can't empty</font></td></tr>"; }
 */
 if ($error==0) {
  
- mysql_query("insert into patient(pno,pname,fname,sex,address,contact,dinfo,amount,pshow)
+ pname->query("insert into patient(pno)
 values('".$pno."','".$name."','".$fname."','".$sex."','".$addr."','".$contact."','".$dinfo."','".$amount."','".$show."')");
  echo "<tr><td align=center><font size=4 color=green>Successfully
 Records Inserted</font></td></tr>";

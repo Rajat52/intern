@@ -16,9 +16,9 @@ href=alist.php>Appointments</td>
 require('connection.php');
 error_reporting(1);
 $rno=trim($_GET["rno"]);
-$rs1=mysql_query("SELECT * from doct where dno='".$rno."'");
+$rs1=$mysqli->query("SELECT * from doct where dno='".$rno."'");
 $sno=1;
-while( $row=mysql_fetch_array($rs1)) {
+while( $row=$rs1->fetch_array()) {
  echo "<tr bgcolor=red><td ><font size=4 color=white>Edit Doctor
 Details</font></td></tr>";
  echo "<form name=fdmod method=post action=dupdate.php>";

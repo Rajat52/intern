@@ -1,35 +1,35 @@
 <?php
 session_start();
 error_reporting(1);
-if(!mysql_connect("localhost","root",""))
+if(!$mysqli = new mysqli("localhost","root",""))
  {
   echo "<tr><td><font color=red size=4>Connection
 Error</font></td></tr>";
   die();
  }
- mysql_connect("localhost","root","");
- mysql_select_db("hospital");
+ $mysqli = new mysqli("localhost","root","");
+ $mysqli->select_db("hospital");
  
  extract($_POST);
  if(isset($signIn))
  {
-	//echo $user,$pass;
-	//for Admin
-	$que=mysql_query("select user,pass from admin where user='$user' and pass='$pass'");
-	 $row= mysql_num_rows($que);
-	 if($row)
-	 {
-		$_SESSION['admin']=$user;
-		echo "<script>window.location='alist.php'</script>";
-		
-		//include('alist.php');
-	 	
-	 }
-	 else
-	 {
-	  $err="<span class='glyphicon glyphicon-exclamation-sign' style='color:red'></span> <font color='red'>Invalid admin Login</font>";
-	 }
-	
+  //echo $user,$pass;
+  //for Admin
+  $que=$mysqli->query("select user,pass from admin where user='$user' and pass='$pass'");
+   $row= $que->num_rows;
+   if($row)
+   {
+    $_SESSION['admin']=$user;
+    echo "<script>window.location='alist.php'</script>";
+    
+    //include('alist.php');
+    
+   }
+   else
+   {
+    $err="<span class='glyphicon glyphicon-exclamation-sign' style='color:red'></span> <font color='red'>Invalid admin Login</font>";
+   }
+  
  
  }
 if($_SESSION['admin']!="")

@@ -20,7 +20,7 @@ Patient</font></td></tr>
 $rno=$_GET["rno"];
  
  
- mysql_query("update Patient set pshow='Y' where pno='$rno'");
+ $mysqli->query("update Patient set pshow='Y' where pno='$rno'");
  echo "<tr><td align=center><font size=4 color=green>SuccessfullyRecords Recovered</font></td></tr>";
 echo "<tr><td align=center><a
 href=plist.php>Continue...</a></td></tr>";

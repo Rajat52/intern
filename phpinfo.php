@@ -1,21 +1,11 @@
 
 <?php require('connection.php');
 ?>
-
-
-
 <html>
 <body>
 <script language="javascript">
-
-
-
-
 </script>
 <form>
-
-
-
 <input type="button" onClick="window.print();" value="print">
 <table height=100 width=900>
 <tr align=center><td>
@@ -52,7 +42,7 @@ $pno=$_POST['pno'];
 $rs1=mysql_query("SELECT * from patient where pshow='Y' order by
 pname;");
 
-while( $row=mysql_fetch_array($rs1)) {
+while( $row=$rs1->fetch_array()) {
 if($pno==$row[0])
 {
 echo "<tr align=center>

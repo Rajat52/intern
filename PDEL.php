@@ -27,7 +27,7 @@ mysql_query("update Patient SET pshow='N' where pno='$todel' ;");
 $rs1=mysql_query("SELECT * from patient where pshow='Y' order by
 pname;");
 $sno=1;
-while( $row=mysql_fetch_array($rs1)) {
+while( $row=$rs1->fetch_array()) {
  echo "<tr><td>$sno</td><td>$row[1]</td><td>$row[2]</td><td><a
 href=pmod.php?rno=".$row[0].">Modify</a> | <a
 href=pdel.php?rno=".$row[0].">Delete</a></td></tr>";
@@ -48,7 +48,7 @@ align=center>Options</td></tr>
 $rs2=mysql_query("SELECT * from patient where pshow='N' order by
 pname;");
 $sno=1;
-while( $row=mysql_fetch_array($rs2)) {
+while( $row=$rs2->fetch_array()) {
  echo "<tr><td>$sno</td><td>$row[1]</td><td>$row[2]</td><td><a
 href=pundel.php?rno=".$row[0].">Undelete</a></td></tr>";
  $sno++;

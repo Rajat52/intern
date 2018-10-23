@@ -34,7 +34,7 @@ Name</td>
 $rs1=mysql_query("SELECT * from patient where pshow='Y' order by
 pname;");
 $sno=1;
-while( $row=mysql_fetch_array($rs1)) {
+while( $row=$rs1->fetch_array()) {
  echo "<tr align=center><td>$row[0]</td><td>$row[1]</td><td>$row[5]</td><td>$row[4]</td>
  <td>$row[3]</td>
  <td><a
@@ -58,7 +58,7 @@ align=center>Options</td></tr>
 $rs2=mysql_query("SELECT * from patient where pshow='N' order by
 pname;");
 $sno=1;
-while( $row=mysql_fetch_array($rs2)) {
+while( $row=$rs2->fetch_array()) {
  echo "<tr><td>$sno</td><td>$row[1]</td><td>$row[2]</td><td><a
 href=Pundel.php?rno=".$row[0].">Undelete</a></td></tr>";
  $sno++;

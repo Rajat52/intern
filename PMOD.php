@@ -18,9 +18,9 @@ href=alist.php>Appointments</td>
 
 $rnooo=trim($_GET["rno"]);
 
-$rs1=mysql_query("SELECT * from patient where pno='".$rnooo."'");
+$rs1=$mysqli->query("SELECT * from patient where pno='".$rnooo."'");
 $sno=1;
-while( $row=mysql_fetch_array($rs1)) {
+while( $row=$rs1->fetch_array()) {
  echo "<tr bgcolor=red><td ><font size=4 color=white>Edit Patient
 Details</font></td></tr>";
  echo "<form name=fpmod method=post action=pupdate.php>";

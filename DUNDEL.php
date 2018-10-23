@@ -19,7 +19,7 @@ Doctor</font></td></tr>
 require('connection.php');
 error_reporting(1);
 $rno=$_GET["rno"];
- mysql_query("update doct set dshow='Y' where dno='$rno'");
+ $mysqli->query("update doct set dshow='Y' where dno='$rno'");
  echo "<tr><td align=center><font size=4 color=green>SuccessfullyRecords Recovered</font></td></tr>";
 echo "<tr><td align=center><a
 href=dlist.php>Continue...</a></td></tr>";
