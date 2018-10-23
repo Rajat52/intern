@@ -41,9 +41,9 @@ while( $row=$rs1->fetch_array()) {
 $rs2=$mysqli->query("SELECT * from doct where dshow='Y' order by
 dname;");
 $sno=1;
-while($row1=$rs2->fetch_array()) {
- $doctor_id=$row1[0];
- $doctor=$row1[1];
+while( $row=$rs2->fetch_array())  {
+ $doctor_id=$row[0];
+ $doctor=$row[1];
  ?>
 	<option value="<?php echo $doctor_id ?>"><?php echo $doctor_id."  :  ".$doctor ?></option>
  <?php

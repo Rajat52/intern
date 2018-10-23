@@ -21,6 +21,7 @@ $pat=trim($_POST["pat"]);
 $doc=trim($_POST["doc"]);
 $tim=trim($_POST["tim"]);
 $dat=trim($_POST["dat"]);
+var_dump($_POST);
 $error=0;
 if ($pat=="") { $error=1; echo "<tr><td><font color=red size=4>Patient's Name
 can't empty</font></td></tr>"; }
@@ -31,9 +32,10 @@ size=4>Time can't empty</font></td></tr>"; }
 if ($dat=="") { $error=1; echo "<tr><td><font color=red
 size=4>Date can't empty</font></td></tr>"; }
 if ($error==0) {
- 
- $mysqli->query("insert into appt(adoctor)
-values('".$doc."','".$pat."','".$tim."','".$dat."','Y')");
+
+ $pname=$mysqli->query("insert into appt (adoctor, apatient, atime, ashow, adate)
+values('".$doc."','".$pat."','".$tim."','Y','".$dat."')");
+
  echo "<tr><td align=center><font size=4 color=green>Successfully
 Records Inserted</font></td></tr>";
 }

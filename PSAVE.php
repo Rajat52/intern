@@ -28,14 +28,12 @@ $dinfo=trim($_POST["dinfo"]);
 $amount=trim($_POST["amount"]);
 $show=trim($_POST["show"]);
 $error=0;
-/*
 if ($name=="") { $error=1; echo "<tr><td><font color=red size=4>Name
 can't empty</font></td></tr>"; }
 if ($sex=="") { $error=1; echo "<tr><td><font color=red
 size=4>Sex can't empty</font></td></tr>"; }
 if ($addr=="") { $error=1; echo "<tr><td><font color=red
 size=4>Address can't empty</font></td></tr>"; }
-*/
 if ($error==0) {
  $pname=$mysqli->query("insert into patient
 values('".$pno."','".$name."','".$fname."','".$sex."','".$addr."','".$contact."','".$dinfo."','".$amount."','".$show."')");

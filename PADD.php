@@ -1,4 +1,4 @@
-<?php require('connection.php');?>
+aq	`<?php require('connection.php');?>
 <html>
  <head>
   <title>Add New Patient</title>

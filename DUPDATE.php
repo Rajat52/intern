@@ -16,7 +16,6 @@ href=alist.php>Appointments</td>
 Doctor</font></td></tr>
 
 <?php
-
 error_reporting(1);
 $rno=trim($_POST["rno"]);
 $name=trim($_POST["name"]);
@@ -27,7 +26,7 @@ if ($spec=="") { $error=1; echo "<tr><td><font color=red
 size=4>Specilization can't empty</font></td></tr>"; }
 if ($error==0) {
 
- mysqli_query("update doct set dname='".$name."',dspec='".$spec."'
+ $mysqli->query("update doct set dname='".$name."',dspec='".$spec."'
 where dno='".$rno."'");
  echo "<tr><td align=center><font size=4 color=green>Successfully
 Records Updated</font></td></tr>";

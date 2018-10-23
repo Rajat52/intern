@@ -20,12 +20,12 @@ $rnooo=trim($_GET["rno"]);
 
 $rs1=$mysqli->query("SELECT * from patient where pno='".$rnooo."'");
 $sno=1;
-while( $row=$rs1->fetch_array()) {
+while( $row=$rs1->fetch_array()){
  echo "<tr bgcolor=red><td ><font size=4 color=white>Edit Patient
 Details</font></td></tr>";
  echo "<form name=fpmod method=post action=pupdate.php>";
  echo "<tr><td><table width=750 cellspacing=0 cellpadding=5>";
- echo "<tr><td>Doctor Name</td><td><input type=text name=name
+ echo "<tr><td>patient Name</td><td><input type=text name=name
 size=30 maxlength=30 value='".$row[1]."'></td></tr>";
  echo "<tr><td>Address</td><td><input type=text name=addr
 size=30 maxlength=30  value='".$row[4]."'></td></tr>";

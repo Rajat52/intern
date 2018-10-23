@@ -15,7 +15,7 @@ href=alist.php>Appointments</td>
 </table></td></tr>
 <tr bgcolor=red><td ><font size=4 color=white>New
 Doctor</font></td></tr>
-<form name=fdadd method=post action=dsave.php>
+<form name=fdadd method=post action=dSAVE.php>
 <tr><td><table width=750 cellspacing=0 cellpadding=5>
 <tr><td>Doctor Name</td><td><input type=text name=name size=30
 maxlength=30></td></tr>
